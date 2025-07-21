@@ -11,33 +11,32 @@ namespace Module_4_App
 
             var color = Console.ReadLine();
 
-            if (color == "white")
+            switch (color)
             {
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Black;
+                case "white":
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is white!");
-            }
-            else if (color == "blue")
-            {
-                Console.BackgroundColor = ConsoleColor.Blue;
-                Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("Your colour is white!");
+                    break;
+                case "blue":
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is blue!");
-            }
-            else if (color == "red")
-            {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("Your color is blue!");
+                    break;
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is red!");
-            }
-            else
-            {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("Your colour is red!");
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Wrong! Try again! =)");
+                    Console.WriteLine("Wrong! Reconsider your oppinion! =)");
+                    break;
             }
 
             Console.ReadKey();
