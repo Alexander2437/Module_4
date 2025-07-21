@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Module_4_App
 {
@@ -6,14 +7,40 @@ namespace Module_4_App
     {
         static void Main(string[] args)
         {
-            int A;
-            int B;
-            double X;
-            double Y;
+            Console.WriteLine("Напишите свой любимый цвет на английском языке с маленькой буквы:");
 
-            bool C = (A < B) | (X > Y);
+            var color = Console.ReadLine();
 
-            Console.WriteLine(C);
+            if (color == "white")
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is white!");
+            }
+            else if (color == "blue")
+            {
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is blue!");
+            }
+            else if (color == "red")
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is red!");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Wrong! Try again! =)");
+            }
+
+            Console.ReadKey();
         }
     }
 }
