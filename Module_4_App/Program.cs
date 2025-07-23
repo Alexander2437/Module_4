@@ -7,22 +7,19 @@ namespace Module_4_App
     {
         static void Main(string[] args)
         {
-            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-            var sum = 0;
+            int[][] array = new int[3][];
+            array[0] = new int[2] { 1, 2 };
+            array[1] = new int[3] { 1, 2, 3 };
+            array[2] = new int[5] { 1, 2, 3, 4, 5 };
 
-            for (int i = 0; i < arr.Length; i++)
+            foreach (int[] arrIndex in array)
             {
-                sum += arr[i];
+                foreach (int numIndex in arrIndex)
+                {
+                    Console.Write(numIndex + "\t");
+                }
+                Console.WriteLine();
             }
-
-            Console.WriteLine(sum);
-
-            Console.ReadKey();
-
-            //foreach (var item in arr)
-            //{
-            //    Console.Write(item + " ");
-            //}
         }
     }
 }
