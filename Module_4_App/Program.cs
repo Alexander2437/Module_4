@@ -7,14 +7,26 @@ namespace Module_4_App
     {
         static void Main(string[] args)
         {
-            Console.Write("Insert your name: ");
-            string? name = Console.ReadLine();
-            Console.Write("Your name inverted: ");
-            
-            for (int i = name.Length; i > 0; i--) // Как вариант for (int i = name.Length - 1; i >= 0; i--) => Console.Write(name[i] + " ")
-                Console.Write(name[i - 1] + " ");
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
 
-            Console.ReadKey();
+            int temp;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            foreach (var num in arr)
+            {
+                Console.Write(num + " ");
+            }
         }
     }
 }
