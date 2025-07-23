@@ -7,19 +7,17 @@ namespace Module_4_App
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i < 5; i++)
+            string[] favcolors = new string[3];
+
+            for (int i = 0; i < favcolors.Length; i++)
             {
-                Console.WriteLine("Iteration {0}", i);
+                Console.WriteLine("Напишите свой любимый цвет номер {0}.", i + 1);
+                favcolors[i] = Console.ReadLine();
+            }
 
-                var text = Console.ReadLine();
-
-                if (text == "stop")
-                {
-                    Console.WriteLine("The cycle is stopped.");
-                    break;
-                }
-
-                switch (text)
+            foreach (var color in favcolors)
+            {
+                switch (color)
                 {
                     case "white":
                         Console.BackgroundColor = ConsoleColor.White;
@@ -40,11 +38,15 @@ namespace Module_4_App
                         Console.WriteLine("Your colour is red!");
                         break;
                     default:
-                        continue;
-                }
-            }
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.ReadKey();
+                        Console.WriteLine("Wrong! Reconsider your oppinion! =)");
+                        break;
+                }
+
+                Console.ReadKey();
+            }
         }
     }
 }
