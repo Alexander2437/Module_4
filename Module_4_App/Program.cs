@@ -7,15 +7,12 @@ namespace Module_4_App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Insert your name: ");
+            Console.Write("Insert your name: ");
             string? name = Console.ReadLine();
-            Console.WriteLine("Your name letter by letter:");
+            Console.Write("Your name inverted: ");
             
-            foreach (var letter in name)
-            {
-                Console.Write($"{letter} ");
-            }
-            Console.WriteLine("The last letter of your name is: {0}", name[^1]);
+            for (int i = name.Length; i > 0; i--) // Как вариант for (int i = name.Length - 1; i >= 0; i--) => Console.Write(name[i] + " ")
+                Console.Write(name[i - 1] + " ");
 
             Console.ReadKey();
         }
