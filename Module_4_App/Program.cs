@@ -7,19 +7,19 @@ namespace Module_4_App
     {
         static void Main(string[] args)
         {
-            int[][] array = new int[3][];
-            array[0] = new int[2] { 1, 2 };
-            array[1] = new int[3] { 1, 2, 3 };
-            array[2] = new int[5] { 1, 2, 3, 4, 5 };
+            var arr = new int[] { 1, -2, 35, -16, 18, 35 };
 
-            foreach (int[] arrIndex in array)
+            int counter = 0;
+
+            foreach (int i in arr)
             {
-                foreach (int numIndex in arrIndex)
-                {
-                    Console.Write(numIndex + "\t");
-                }
-                Console.WriteLine();
+                if (i > 0)
+                    counter++;
             }
+
+            Console.WriteLine(counter);
+
+            Console.ReadKey();
         }
     }
 }
