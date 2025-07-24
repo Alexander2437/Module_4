@@ -1,23 +1,30 @@
-﻿using System;
-using System.Drawing;
-
-namespace Module_4_App
+﻿namespace Module_4_App
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var arr = new int[] { 1, -2, 35, -16, 18, 35 };
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
 
-            int counter = 0;
+            var temp = 0;
 
-            foreach (int i in arr)
+            for (int i = 0; i <= arr.GetUpperBound(0); i++)
             {
-                if (i > 0)
-                    counter++;
+                for (int j = 0; j <= arr.GetUpperBound(1); j++)
+                {
+                    for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
+                    {
+                        if (arr[i, j] > arr[i, k])
+                        {
+                            temp = arr[i, k];
+                            arr[i, k] = arr[i, j];
+                            arr[i, j] = temp;
+                        }
+                    }
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
             }
-
-            Console.WriteLine(counter);
 
             Console.ReadKey();
         }
